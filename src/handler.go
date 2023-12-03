@@ -15,6 +15,15 @@ func Index(c *gin.Context) {
 }
 
 func Deploy(c *gin.Context) {
+	// check if req is just ping
+	if ping := c.GetHeader("X-GitHub-Event"); ping == "ping" {
+		c.JSON(200, gin.H{
+			"status":  "success",
+			"message": "pong",
+		})
+		return
+	}
+
 	body, err := io.ReadAll(c.Request.Body)
 	if err != nil {
 		c.JSON(500, gin.H{
