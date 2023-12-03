@@ -18,7 +18,7 @@ A simple HTTP server written in Go that monitors pushes to your Git repository i
 ### Install autopull
 You can install it via `go install` command.
 ```
-go install github.com/lareii/autopull
+go install github.com/lareii/autopull@latest
 ```
 ### Usage
 ```
