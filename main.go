@@ -1,28 +1,19 @@
 package main
 
 import (
-	"log"
+	"io"
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 
 	s "github.com/lareii/autopull/src"
 )
 
 func init() {
 	println("Initializing...")
-	err := godotenv.Load()
 
-	if err != nil {
-		log.Fatal(".env duzelt abi")
-	}
-
-	/*
-		mode := os.Getenv("GIN_MODE")
-		gin.SetMode(mode)
-		gin.DefaultWriter = io.Discard
-	*/
+	gin.SetMode("debug")
+	gin.DefaultWriter = io.Discard
 }
 
 func main() {
