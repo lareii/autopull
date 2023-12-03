@@ -19,6 +19,8 @@ You can install it via `go install` command.
 go install github.com/lareii/autopull@latest
 ```
 
+You can add the tool to path for quick access. (optional)
+
 ### Set Webhook
 1. Choose a repository and click on the "Settings" tab at the top of the repository page.
 
