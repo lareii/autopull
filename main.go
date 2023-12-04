@@ -13,15 +13,15 @@ import (
 func init() {
 	s.Clear()
 
-	s.Log(2, "Initializing.", true)
+	s.Log(2, "initializing", true)
 
 	if args := os.Args[1:]; len(args) != 2 {
-		println("parameters are missing.")
+		s.Log(0, "some parameters are missing", true)
 		os.Exit(0)
 	}
 
 	if err := s.CheckDir(os.Args[1]); err != nil {
-		println(err.Error())
+		s.Log(0, err.Error(), true)
 		os.Exit(0)
 	}
 
