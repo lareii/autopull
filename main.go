@@ -30,17 +30,20 @@ func init() {
 	s.Log(2, "repository: "+repo, true)
 
 	println()
-	println("Is everything correct?")
-	println("[0] Yes")
-	println("[1] Cancel")
-	println()
-	print("> ")
 
-	var ok string
-	fmt.Scan(&ok)
+	for {
+		print("is everything correct? (y/n): ")
 
-	if ok == "1" {
-		os.Exit(0)
+		var ok string
+		fmt.Scan(&ok)
+
+		if ok == "y" {
+			break
+		} else if ok == "n" {
+			os.Exit(0)
+		} else {
+			println("nuh uh")
+		}
 	}
 
 	println()
