@@ -50,7 +50,7 @@ func init() {
 }
 
 func main() {
-	s.Log(2, "Server listening on :3000.", true)
+	s.Log(2, "server listening on :3000", true)
 
 	router := gin.Default()
 	router.SetTrustedProxies(nil)

@@ -13,7 +13,7 @@ func Index(c *gin.Context) {
 		"message": "hello world",
 	})
 
-	Log(2, c.FullPath()+" - "+c.Request.Method+" from "+c.ClientIP(), true)
+	Log(2, "hello world", true)
 }
 
 func Deploy(c *gin.Context) {
