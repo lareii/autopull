@@ -26,8 +26,8 @@ func init() {
 	}
 
 	repo, _ := s.GetRepoURL(os.Args[1])
-	s.Log(2, "Directory: "+os.Args[1], true)
-	s.Log(2, "Repository: "+repo, true)
+	s.Log(2, "directory: "+os.Args[1], true)
+	s.Log(2, "repository: "+repo, true)
 
 	println()
 	println("Is everything correct?")
