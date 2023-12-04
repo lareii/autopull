@@ -8,7 +8,11 @@ import (
 	"errors"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
+	"time"
+
+	"github.com/fatih/color"
 )
 
 func verifySignature(secret, header, payload string) error {
@@ -28,17 +32,35 @@ func verifySignature(secret, header, payload string) error {
 }
 
 func pullRepo(dir string) error {
+	repo, err := GetRepoURL(dir)
+
+	if err != nil {
+		return errors.New(err.Error())
+	}
+
+	cmd := exec.Command("git", "pull", repo)
+	cmd.Dir = dir
+
+	if err := cmd.Run(); err != nil {
+		return errors.New(err.Error())
+	}
+
+	return nil
+}
+
+func GetRepoURL(dir string) (string, error) {
 	config := dir + ".git/config"
 
 	file, err := os.Open(config)
 	if err != nil {
-		return errors.New("git config not found")
+		return "", errors.New("git config not found")
 	}
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
 
 	var repo string
+
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.Contains(line, "url =") {
@@ -50,15 +72,58 @@ func pullRepo(dir string) error {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return errors.New("git config cannot read")
+		return "", errors.New("git config cannot read")
 	}
 
-	cmd := exec.Command("git", "pull", repo)
-	cmd.Dir = dir
+	return repo, nil
+}
 
-	if err := cmd.Run(); err != nil {
-		return errors.New(err.Error())
+func CheckDir(dir string) error {
+	if _, err := os.Stat(dir + ".git/"); os.IsNotExist(err) {
+		return errors.New(".git not found")
 	}
 
 	return nil
+}
+
+func Log(level int, msg string, newLine bool) {
+	var c *color.Color
+
+	if level == 0 {
+		c = color.New(color.BgRed)
+		c.Print("ERROR")
+	} else if level == 1 {
+		c = color.New(color.BgYellow)
+		c.Print("WARNING")
+	} else {
+		c = color.New(color.BgGreen)
+		c.Print("LOG")
+	}
+
+	print(" ")
+
+	c = color.New(color.BgBlue)
+	now := time.Now()
+	c.Print(now.Format("2006/01/02 15:04:05")) // wtf
+
+	print(" ")
+
+	print(msg)
+
+	if newLine {
+		println()
+	}
+}
+
+func Clear() {
+	var cmd *exec.Cmd
+
+	if runtime.GOOS == "windows" {
+		cmd = exec.Command("cmd", "/c", "cls")
+	} else {
+		cmd = exec.Command("clear")
+	}
+
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }

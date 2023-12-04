@@ -12,6 +12,8 @@ func Index(c *gin.Context) {
 		"status":  "success",
 		"message": "hello world",
 	})
+
+	Log(2, c.FullPath()+" - "+c.Request.Method+" from "+c.ClientIP(), true)
 }
 
 func Deploy(c *gin.Context) {
@@ -21,6 +23,8 @@ func Deploy(c *gin.Context) {
 			"status":  "success",
 			"message": "pong",
 		})
+
+		Log(2, "pong", true)
 		return
 	}
 
@@ -30,6 +34,8 @@ func Deploy(c *gin.Context) {
 			"status":  "error",
 			"message": err.Error(),
 		})
+
+		Log(0, err.Error(), true)
 		return
 	}
 
@@ -40,6 +46,8 @@ func Deploy(c *gin.Context) {
 			"status":  "error",
 			"message": "missing header",
 		})
+
+		Log(0, "missing header", true)
 		return
 	}
 
@@ -50,6 +58,8 @@ func Deploy(c *gin.Context) {
 			"status":  "error",
 			"message": valid.Error(),
 		})
+
+		Log(0, valid.Error(), true)
 		return
 	}
 
@@ -59,4 +69,6 @@ func Deploy(c *gin.Context) {
 		"status":  "success",
 		"message": "done",
 	})
+
+	Log(2, "autopull triggered. pulling the repo", true)
 }
