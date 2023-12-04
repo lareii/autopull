@@ -1,4 +1,4 @@
-<img src="./assets/autopull.png">
+![GitHub contributors](./assets/autopull.png)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/lareii/autopull)
 ![GitHub Repo stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
