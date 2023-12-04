@@ -1,8 +1,8 @@
-![GitHub contributors](./assets/autopull.png)
+![autopull Logo](./assets/autopull.png)
 
-![GitHub contributors](https://img.shields.io/github/contributors/lareii/autopull)
-![GitHub Repo stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
-![GitHub repo size](https://img.shields.io/github/repo-size/lareii/autopull?color=limegreen)
+![GitHub ontributors](https://img.shields.io/github/contributors/lareii/autopull)
+![GitHub Repo Stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/lareii/autopull?color=limegreen)
 
 🔄 A real-time Git auto-sync tool.
 
