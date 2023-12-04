@@ -1,4 +1,4 @@
-![autopull Logo](./assets/autopull.png)
+<img width="200" src="./assets/autopull.png">
 
 ![GitHub ontributors](https://img.shields.io/github/contributors/lareii/autopull)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
@@ -7,6 +7,8 @@
 🔄 A real-time Git auto-sync tool.
 
 A simple HTTP server written in Go that monitors pushes to your Git repository in real-time, and pulls them from your Git repository.
+
+![autopull Schema](./assets/autopull_schema.png)
 
 ## Getting Started
 ### Prerequisites
