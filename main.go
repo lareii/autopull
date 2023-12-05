@@ -11,8 +11,6 @@ import (
 )
 
 func init() {
-	s.Clear()
-
 	s.Log(2, "initializing", true)
 
 	if args := os.Args[1:]; len(args) != 2 {
@@ -24,6 +22,8 @@ func init() {
 		s.Log(0, err.Error(), true)
 		os.Exit(0)
 	}
+
+	s.Clear()
 
 	repo, _ := s.GetRepoURL(os.Args[1])
 	s.Log(2, "directory: "+os.Args[1], true)
