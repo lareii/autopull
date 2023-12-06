@@ -4,7 +4,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/lareii/autopull)](https://goreportcard.com/report/github.com/lareii/autopull)
 ![GitHub Contributors](https://img.shields.io/github/contributors/lareii/autopull)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/lareii/autopull?color=limegreen)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/lareii/autopull)
 
 🔄 A real-time GitHub auto-sync tool.
 
