@@ -6,9 +6,9 @@
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/lareii/autopull?color=limegreen)
 
 
-🔄 A real-time Git auto-sync tool.
+🔄 A real-time GitHub auto-sync tool.
 
-A simple HTTP server written in Go that monitors pushes to your Git repository in real-time, and pulls them from your Git repository.
+A simple HTTP server written in Go that monitors pushes to your GitHub repository in real-time, and pulls them from your GitHub repository.
 
 ![autopull Schema](./assets/autopull_schema.png)
 
