@@ -40,9 +40,9 @@ func init() {
 		var ok string
 		fmt.Scan(&ok)
 
-		if ok == "y" {
+		if ok[0] == 'y' {
 			break
-		} else if ok == "n" {
+		} else if ok[0] == 'n' {
 			os.Exit(0)
 		} else {
 			println("nuh uh")
