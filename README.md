@@ -1,8 +1,10 @@
 <img width="300" src="./assets/autopull.png">
 
-![GitHub ontributors](https://img.shields.io/github/contributors/lareii/autopull)
+[![Go Report Card](https://goreportcard.com/badge/github.com/lareii/autopull)](https://goreportcard.com/report/github.com/lareii/autopull)
+![GitHub Contributors](https://img.shields.io/github/contributors/lareii/autopull)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/lareii/autopull?color=limegreen)
+
 
 🔄 A real-time Git auto-sync tool.
 
