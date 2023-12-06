@@ -1,5 +1,6 @@
 <img width="300" src="./assets/logo.png" alt="autopull Logo">
 
+![Github Build Status](https://github.com/lareii/autopull/actions/workflows/build.yml/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/lareii/autopull)](https://goreportcard.com/report/github.com/lareii/autopull)
 ![GitHub Contributors](https://img.shields.io/github/contributors/lareii/autopull)
 ![GitHub Repo Stars](https://img.shields.io/github/stars/lareii/autopull?color=yellow)
