@@ -7,27 +7,30 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	s "github.com/lareii/autopull/src"
+	"github.com/lareii/autopull/handlers"
+	"github.com/lareii/autopull/utils"
 )
 
 func init() {
-	s.Log(2, "initializing", true)
+	utils.Log(2, "initializing", true)
 
+	// Check if the required parameters are present.
 	if args := os.Args[1:]; len(args) != 2 {
-		s.Log(0, "some parameters are missing", true)
+		utils.Log(0, "some parameters are missing", true)
 		os.Exit(0)
 	}
 
-	if err := s.CheckDir(os.Args[1]); err != nil {
-		s.Log(0, err.Error(), true)
+	// Check if the specified directory is a git repository.
+	if err := utils.Check(os.Args[1]); err != nil {
+		utils.Log(0, err.Error(), true)
 		os.Exit(0)
 	}
 
-	s.Clear()
+	utils.Clear()
 
-	repo, _ := s.GetRepoURL(os.Args[1])
-	s.Log(2, "directory: "+os.Args[1], true)
-	s.Log(2, "repository: "+repo, true)
+	repo, _ := utils.Repository(os.Args[1])
+	utils.Log(2, "directory: "+os.Args[1], true)
+	utils.Log(2, "repository: "+repo, true)
 
 	println()
 
@@ -53,13 +56,13 @@ func init() {
 }
 
 func main() {
-	s.Log(2, "server listening on :3000", true)
+	utils.Log(2, "server listening on :3000", true)
 
 	router := gin.Default()
 	router.SetTrustedProxies(nil)
 
-	router.GET("/", s.Index)
-	router.POST("/deploy", s.Deploy)
+	router.GET("/", handlers.Index)
+	router.POST("/deploy", handlers.Deploy)
 
 	router.Run(":3000")
 }
