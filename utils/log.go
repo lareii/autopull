@@ -7,7 +7,7 @@ import (
 )
 
 /*
- * Log, logs messages to the console.
+ * Log is a function for printing a log message.
  */
 
 func Log(level int, message string, newLine bool) {

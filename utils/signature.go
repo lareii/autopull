@@ -9,8 +9,8 @@ import (
 )
 
 /*
- * Signature, checks if the request signature matches the
- * signature of the specified values.
+ * Signature is a function for checking if the request signature
+ * matches the signature of the specified values.
  */
 
 func Signature(secret, header, payload string) error {

@@ -11,8 +11,8 @@ import (
 /*
  * Deploy is a handler for the /deploy endpoint.
 
- * If the request is ping, it returns "pong" message.
- * Else, it pulls and returns "done" message the repo if signature is valid.
+ * If the request is just a ping message, it returns "pong" message. Otherwise,
+ * it pulls the repo and returns "done" message if the signature is valid.
  */
 
 func Deploy(c *gin.Context) {

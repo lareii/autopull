@@ -7,7 +7,7 @@ import (
 )
 
 /*
- * Clear, clears the terminal.
+ * Clear is a function for clearing the terminal screen.
  */
 
 func Clear() {

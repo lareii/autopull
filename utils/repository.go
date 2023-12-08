@@ -8,8 +8,8 @@ import (
 )
 
 /*
- * Repository, gets the repository url from the ./git/config
- * file in the specified directory.
+ * Repository is a function to get the repository URL from
+ * the "./git/config" file in the specified directory.
  */
 
 func Repository(dir string) (string, error) {

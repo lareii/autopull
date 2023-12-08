@@ -6,7 +6,7 @@ import (
 )
 
 /*
- * Pull, pulls the latest changes from the repo.
+ * Pull is a function for executing the "git pull" command.
  */
 
 func Pull(dir string) error {

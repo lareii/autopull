@@ -6,7 +6,8 @@ import (
 )
 
 /*
- * Check, checks if the .git directory exists in the specified directory.
+ * Check is a function to check if the ".git/" directory
+ * exists in the given directory.
  */
 
 func Check(dir string) error {
